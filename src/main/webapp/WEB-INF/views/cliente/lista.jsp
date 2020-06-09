@@ -61,9 +61,4 @@
 
 </div>
 
-	<script> 
-		var titulo = document.querySelector(".id");
-		titulo.textContent = "Aparecida Nutricionista";
-	</script>
-
 <%@ include file="/WEB-INF/views/rodape.jsp" %>

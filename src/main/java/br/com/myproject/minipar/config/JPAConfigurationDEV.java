@@ -26,7 +26,7 @@ public class JPAConfigurationDEV {
 		dataSource.setUsername("root");
 		dataSource.setPassword("@Sicoob123");
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/minipar?useTimezone=true&serverTimezone=America/Sao_Paulo");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/minipar");
 		factoryBean.setDataSource(dataSource);
 		
 		Properties properties = new Properties();

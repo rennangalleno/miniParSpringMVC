@@ -16,7 +16,7 @@
 			
 				<div class="form-group">	
 													
-					<label class="col-sm-1 control-label">Cliente:</label>
+					<label class="col-sm-1 control-label mr-1">Cliente:</label>
 					<div class="col-sm-3">
 						<select class="form-control" name="clienteId">
 							<option value="">Selecione</option>

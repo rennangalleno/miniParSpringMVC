@@ -81,7 +81,9 @@
 		</div>		
 	</form:form>
 	
-	<form action="/minipar/agenda/antecipa?${boleto.id},${cheque.id},${cartao.id}" method="POST">
+	<form>
+	
+	<input type="hidden" name="clienteId" value="${cliente.id}"/>
 	
 	<table class="table table-bordered table-striped table-houver">
 		<tr>
@@ -135,7 +137,7 @@
 		</c:forEach>				
 	</table>
 	
-	<button class="btn btn-primary" type="submit">Antecipar</button>
+	<button class="btn btn-primary">Antecipar</button>
 	
 	</form>
 </div>

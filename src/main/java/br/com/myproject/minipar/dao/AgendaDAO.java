@@ -18,6 +18,8 @@ import org.springframework.stereotype.Repository;
 import br.com.myproject.minipar.models.Boleto;
 import br.com.myproject.minipar.models.Cartao;
 import br.com.myproject.minipar.models.Cheque;
+import br.com.myproject.minipar.models.Lote;
+import br.com.myproject.minipar.models.Remessa;
 
 @Repository @Transactional
 public class AgendaDAO {
@@ -200,5 +202,93 @@ public class AgendaDAO {
 
 		return typedQuery.getResultList();
 	}
+	
+	
+	public List<Cheque> listaChequeLote(List<Integer> chequeId) {
+		return manager.createQuery("select c from Cheque c "
+				+ "join fetch c.pagador "
+				+ "join fetch c.cliente "
+				+ "join fetch c.tipoRecebivel "
+				+ "join fetch c.situacaoRecebivel "
+				+ "where c.situacaoRecebivel = 1 "
+				+ "and c.id in (:chequeId)", Cheque.class)
+				.setParameter("chequeId", chequeId)
+				.getResultList();	
+	}
+	
+	public List<Boleto> listaBoletoLote(List<Integer> boletoId) {
+		return manager.createQuery("select b from Boleto b "
+				+ "join fetch b.pagador "
+				+ "join fetch b.cliente "
+				+ "join fetch b.tipoRecebivel "
+				+ "join fetch b.situacaoRecebivel "
+				+ "where b.situacaoRecebivel = 1 "
+				+ "and b.id in (:boletoId)", Boleto.class)
+				.setParameter("boletoId", boletoId)
+				.getResultList();	
+	}
+	
+	public List<Cartao> listaCartaoLote(List<Integer> cartaoId) {
+		return manager.createQuery("select c from Cartao c "
+				+ "join fetch c.bandeira "
+				+ "join fetch c.cliente "
+				+ "join fetch c.tipoRecebivel "
+				+ "join fetch c.situacaoRecebivel "
+				+ "where c.situacaoRecebivel = 1 "
+				+ "and c.id in (:cartaoId)", Cartao.class)
+				.setParameter("cartaoId", cartaoId)
+				.getResultList();	
+	}
+
+	public void gravaLote(Lote<?> lote) {
+		if(lote.getId() == null) {
+			manager.persist(lote);
+		}else {
+			manager.merge(lote);
+		}	
+	}
+	
+	public void gravaRemessa (Remessa remessa) {
+		if(remessa.getId() == null) {
+			manager.persist(remessa);
+		}else {
+			manager.merge(remessa);
+		}	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
