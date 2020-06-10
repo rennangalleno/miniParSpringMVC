@@ -24,7 +24,7 @@ public class JPAConfigurationDEV {
 		
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("root");
-		dataSource.setPassword("@Sicoob123");
+		dataSource.setPassword("");
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/minipar");
 		factoryBean.setDataSource(dataSource);
