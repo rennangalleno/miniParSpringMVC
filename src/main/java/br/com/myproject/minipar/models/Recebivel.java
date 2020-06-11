@@ -118,12 +118,4 @@ public class Recebivel {
 				+ ", situacaoRecebivel=" + situacaoRecebivel + ", lote=" + lote + ", dataCriacao=" + dataCriacao
 				+ ", dataVencimento=" + dataVencimento + ", valor=" + valor + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 }
